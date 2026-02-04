@@ -1,16 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,10 +13,46 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+        <header className="w-full bg-slate-900 text-white">
+          <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+            <h1 className="text-xl font-semibold">MyWebsite</h1>
+
+            <nav className="flex gap-6">
+              <a href="/" className="hover:text-slate-300 transition">
+                Home
+              </a>
+              <a href="/docs" className="hover:text-slate-300 transition">
+                Docs
+              </a>
+              <a href="/about" className="hover:text-slate-300 transition">
+                About
+              </a>
+              <a href="/contact" className="hover:text-slate-300 transition">
+                Contact
+              </a>
+            </nav>
+          </div>
+        </header>
+
         {children}
+        <footer className="w-full bg-slate-950 text-slate-400">
+          <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm">© 2026 MyWebsite. All rights reserved.</p>
+
+            <div className="flex gap-5 text-sm">
+              <a href="/privacy" className="hover:text-white transition">
+                Privacy
+              </a>
+              <a href="/terms" className="hover:text-white transition">
+                Terms
+              </a>
+              <a href="/support" className="hover:text-white transition">
+                Support
+              </a>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
