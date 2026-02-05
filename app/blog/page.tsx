@@ -1,5 +1,12 @@
+import Link from "next/link";
+
 function Blog() {
-  return <div>Blog page</div>;
+  return (
+    <>
+      <Link href="/">Home</Link>
+      <div>Blog page</div>
+    </>
+  );
 }
 
 export default Blog;
