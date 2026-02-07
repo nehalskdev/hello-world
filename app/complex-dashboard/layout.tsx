@@ -1,4 +1,4 @@
-import LoginSlot from "./@login/page";
+import login from "./@login/page";
 
 function ComplexDashboardLayout({
   children,
@@ -13,7 +13,7 @@ function ComplexDashboardLayout({
   notifications: React.ReactNode;
   login: React.ReactNode;
 }) {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return isLoggedIn ? (
     <div>
       <div>{children}</div>
